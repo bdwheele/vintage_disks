@@ -1,0 +1,42 @@
+comment: 'Osborne 1 40-track 5-sector SSDD'
+
+image_reader {
+	filename: "osborne1dd.img"
+	img {}
+}
+
+image_writer {
+	filename: "osborne1dd.img"
+	img {}
+}
+
+layout {
+	tracks: 40
+	sides: 1
+	layoutdata {
+		sector_size: 1024
+		physical {
+			start_sector: 1
+			count: 5
+		}
+	}
+}
+
+encoder {
+	ibm {
+		trackdata {
+			target_rotational_period_ms: 167
+			target_clock_period_us: 3.333
+		}
+	}
+}
+
+decoder {
+	ibm {}
+}
+
+tpi: 48
+
+
+
+

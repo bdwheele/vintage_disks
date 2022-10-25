@@ -1,0 +1,54 @@
+comment: 'Osborne 1 40-track 10-sector SSSD'
+# Example: fluxengine write osborne1sd.textpb 40track_drive -i os1dias.imd -d drive:1
+
+
+image_reader {
+	filename: "osborne1dd.img"
+	img {}
+}
+
+image_writer {
+	filename: "osborne1dd.img"
+	img {}
+}
+
+layout {
+	tracks: 40
+	sides: 1
+	layoutdata {
+		sector_size: 256
+		physical {
+			start_sector: 1
+			count: 10
+		}
+	}
+}
+
+encoder {
+	ibm {
+		trackdata {
+            target_rotational_period_ms: 167
+			#target_clock_period_us: 3.33
+            target_clock_period_us: 2
+            
+            use_fm: true
+            gap0: 0x10
+            gap2: 0x09
+            gap3: 0x10
+            idam_byte: 0xf57e
+            dam_byte: 0xf56f
+            gap_fill_byte: 0xffff
+
+		}
+	}
+}
+
+decoder {
+	ibm {}
+}
+
+tpi: 48
+
+
+
+
