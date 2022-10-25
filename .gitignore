@@ -1,0 +1,10 @@
+# disk images
+*.adf
+*.img
+*.imd
+*.td0
+*.d64
+
+# sub projects
+greaseweazle
+fluxengine
